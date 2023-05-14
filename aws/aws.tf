@@ -1,3 +1,5 @@
+# https://awstip.com/deploying-webapp-on-the-top-of-aws-using-terraform-8fd6401f612c
+
 provider "aws" {
   region = "us-east-1"
   profile = "terraform"
@@ -11,6 +13,7 @@ resource "aws_key_pair" "key_pair_app" {
   key_name = "Webapp_key"
   public_key = tls_private_key.instance_key.public_key_openssh
 }
+
 
 resource "aws_security_group" "webapp_SG" {
   
